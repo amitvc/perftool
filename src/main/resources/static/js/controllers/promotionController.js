@@ -36,7 +36,7 @@
         $scope.deletePromotionData = function (index) {
             $log.info("Deleting promotion setup");
             $scope.promotionSetupData = {};
-            clearModel($scope.promotionSetupData);
+            configService.clearModel($scope.promotionSetupData);
             $scope.setup.promotionSetup.splice(index, 1);
         }
         
@@ -77,7 +77,7 @@
             } else {
                 angular.copy($scope.promotionSetupData, $scope.setup.promotionSetup[$scope.promotionSetupData.index]);
             }
-            clearModel($scope.promotionSetupData);
+            configService.clearModel($scope.promotionSetupData);
         };
         
         $scope.clonePromotion = function (index) {
